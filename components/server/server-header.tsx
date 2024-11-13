@@ -63,6 +63,7 @@ function ServerHeader({ server, role }: ServerHeaderProps) {
 
         {isModerator && (
           <DropdownMenuItem
+            onClick={() => onOpen('createChannel', { server })}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             Create Channel
@@ -76,6 +77,7 @@ function ServerHeader({ server, role }: ServerHeaderProps) {
 
         {isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen('deleteServer', { server })}
             className="text-red-600 px-3 py-2 text-sm cursor-pointer"
           >
             Delete Server
@@ -85,6 +87,7 @@ function ServerHeader({ server, role }: ServerHeaderProps) {
 
         {!isAdmin && (
           <DropdownMenuItem
+            onClick={() => onOpen('leaveServer', { server })}
             className="text-red-600 px-3 py-2 text-sm cursor-pointer"
           >
             Leave Server
